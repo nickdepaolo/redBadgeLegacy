@@ -11,7 +11,7 @@ class DogIndex extends Component {
     this.state = {remount: (new Date()).getTime()}
     }
 
-    componentDidMount(event) {
+    componentDidMount() {
       
         console.log("Component mounted");
         console.log(this.state.image);

@@ -17,7 +17,6 @@ class List extends Component {
         console.log(event.target.value);
         
     }
-
     
     handleEvent(event){
         this.setState({toDo: this.state.toDo.concat (event.target.value)})
