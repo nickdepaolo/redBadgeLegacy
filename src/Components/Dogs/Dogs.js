@@ -4,7 +4,6 @@ import {Container} from 'reactstrap';
 import DogIndex from './DogIndex';
  
 const Dogs = (props) => {
-  console.log(props.url);
 
   return (
     <Container className="App">

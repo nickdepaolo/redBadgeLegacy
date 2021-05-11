@@ -8,13 +8,12 @@ class DogIndex extends Component {
         this.state = {
             img: "",
         }
-    this.state = {remount: (new Date()).getTime()}
+        this.getPhoto = this.getPhoto.bind(this)
     }
 
     componentDidMount() {
       
         console.log("Component mounted");
-        console.log(this.state.image);
         fetch('https://dog.ceo/api/breeds/image/random')
             .then(res => res.json())
             .then(data => {
@@ -26,11 +25,9 @@ class DogIndex extends Component {
         console.log(this.state.img);
     }
     
-    setKey = () => {
-        this.setState({
-            remount: (new Date()).getTime()
-        })
-        console.log(this.state.remount);
+    getPhoto() {
+     this.setState({img: ''});
+     this.componentDidMount()
     }
 
     render() {
@@ -39,7 +36,7 @@ class DogIndex extends Component {
             <h1>Random Dog Photo</h1>
             <img src={this.state.img} key={this.state.remount} alt='dog' />
             <br/>
-            <div><Button onClick={this.setKey} >New Dog</Button></div>
+            <div><Button onClick={this.getPhoto} >New Dog</Button></div>
             </div>
         )
     }
